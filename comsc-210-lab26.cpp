@@ -22,7 +22,7 @@ int main() {
     list<string> list1;
     set<string> set1;
 
-    ifstream file("codes.txt");
+    ifstream file("names.txt");
 
     if(!file.is_open()){
         cout << "File could not be opened! Try Again!" << endl;
