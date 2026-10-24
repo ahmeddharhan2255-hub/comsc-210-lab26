@@ -55,6 +55,35 @@ int main() {
         }
     }
 
+    for(int i = 0; i < 4; i++){
+        for(int j = 0; j <3; j++){
+            arr[1][i][j] /= 15;
+        }
+    }
+
+    cout << "Number of simulations: " << SIZE << endl;
+
+    cout << "Operation\t\tVector\\List\\Set";
+
+    cout << "Read" << endl;
+    for(int i = 0; i < 3; i++){
+        cout << "\t\t" << arr[1][0][i];
+    }
+
+    cout << "Sort" << endl;
+    for(int i = 0; i < 3; i++){
+        cout << "\t\t" << arr[1][1][i];
+    }
+
+    cout << "Insert" << endl;
+    for(int i = 0; i < 3; i++){
+        cout << "\t\t" << arr[1][2][i];
+    }
+
+    cout << "Delete" << endl;
+    for(int i = 0; i < 3; i++){
+        cout << "\t\t" << arr[1][3][i];
+    }
     return 0;
 }
 
