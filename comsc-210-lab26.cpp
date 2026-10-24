@@ -18,6 +18,15 @@ void deleting(vector<string> vec1, list<string> list1, set<string> set1);
 
 int main() {
 
+    int SIZE = 15;
+
+    //Slice 0 represents results of that run
+    //Slice 1 represents accumulated results
+    //Rows represent in order: Reading, Sorting
+    //inserting, and deleting
+    //Columns represent Vector, List, and Set
+    int arr[2][4][3] = {};
+
     vector<string> vec1;
     list<string> list1;
     set<string> set1;
@@ -29,11 +38,15 @@ int main() {
         return 1;
     }
 
-    cout << "\t\tVECTOR\t\tList\t\tSet" << endl;
-    reading(vec1, list1, set1, file);
-    sorting(vec1, list1);
-    inserting(vec1, list1, set1);
-    deleting(vec1, list1, set1);
+    for(int i = 0; i < SIZE; i++){
+        for(int j = 0; j < 4; j++){
+            for(int k = 0; k < 3; k++){
+
+            }
+        }    
+    }
+
+    
 
     return 0;
 }
