@@ -11,10 +11,10 @@
 using namespace std;
 using namespace std::chrono;
 
-void reading(vector<string>& vec1, list<string>& list1, set<string>& set1, ifstream& file);
-void sorting(vector<string> vec1, list<string> list1);
-void inserting(vector<string> vec1, list<string> list1, set<string> set1);
-void deleting(vector<string> vec1, list<string> list1, set<string> set1);
+void reading(vector<string>& vec1, list<string>& list1, set<string>& set1, ifstream& file,int arr[0][4][3]);
+void sorting(vector<string> vec1, list<string> list1,int arr[0][4][3]);
+void inserting(vector<string> vec1, list<string> list1, set<string> set1,int arr[0][4][3]);
+void deleting(vector<string> vec1, list<string> list1, set<string> set1,int arr[0][4][3]);
 
 int main() {
 
@@ -27,31 +27,31 @@ int main() {
     //Columns represent Vector, List, and Set
     int arr[2][4][3] = {};
 
-    vector<string> vec1;
-    list<string> list1;
-    set<string> set1;
-
-    ifstream file("names.txt");
-
-    if(!file.is_open()){
-        cout << "File could not be opened! Try Again!" << endl;
-        return 1;
-    }
-
     for(int i = 0; i < SIZE; i++){
-        for(int j = 0; j < 4; j++){
-            for(int k = 0; k < 3; k++){
 
-            }
-        }    
-    }
+        vector<string> vec1;
+        list<string> list1;
+        set<string> set1;
 
+        ifstream file("names.txt");
+
+        if(!file.is_open()){
+            cout << "File could not be opened! Try Again!" << endl;
+        return 1;
+        }
+
+        cout << "\t\tVECTOR\t\tList\t\tSet" << endl;
+        reading(vec1, list1, set1, file);
+        sorting(vec1, list1);
+        inserting(vec1, list1, set1);
+        deleting(vec1, list1, set1);
     
+    }
 
     return 0;
 }
 
-void reading(vector<string>& vec1, list<string>& list1, set<string>& set1, ifstream& file){
+void reading(vector<string>& vec1, list<string>& list1, set<string>& set1, ifstream& file,arr[0]){
     cout << "Reading";
     string code;
 
@@ -94,7 +94,7 @@ void reading(vector<string>& vec1, list<string>& list1, set<string>& set1, ifstr
     cout << endl;
 }
 
-void sorting(vector<string> vec1, list<string> list1){
+void sorting(vector<string> vec1, list<string> list1,arr[0]){
     cout << "Sorting";
     auto start1 = high_resolution_clock::now();
 
@@ -116,7 +116,7 @@ void sorting(vector<string> vec1, list<string> list1){
     cout << endl;
 }
 
-void inserting(vector<string> vec1, list<string> list1, set<string> set1){
+void inserting(vector<string> vec1, list<string> list1, set<string> set1,arr[0]){
     cout << "Inserting";
     auto start = high_resolution_clock::now();
 
@@ -147,7 +147,7 @@ void inserting(vector<string> vec1, list<string> list1, set<string> set1){
     cout << endl;
 }
 
-void deleting(vector<string> vec1, list<string> list1, set<string> set1){
+void deleting(vector<string> vec1, list<string> list1, set<string> set1,arr[0]){
     cout <<"Deleting";
     auto it = list1.begin();
     advance(it,list1.size()/2);
