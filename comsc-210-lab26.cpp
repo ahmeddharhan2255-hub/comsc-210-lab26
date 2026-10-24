@@ -185,7 +185,6 @@ void deleting(vector<string> vec1, list<string> list1, set<string> set1,int arr[
     cout << "\t\t" << duration1.count();
     arr[3][1] = duration1.count();
 
-
     auto start2 = high_resolution_clock::now();
 
     set1.erase(it2);
@@ -195,7 +194,6 @@ void deleting(vector<string> vec1, list<string> list1, set<string> set1,int arr[
     cout << "\t\t"<< duration2.count();
     arr[3][2] = duration2.count();
 
-    
     cout << endl;
 
 }
