@@ -40,12 +40,19 @@ int main() {
         return 1;
         }
 
-        cout << "\t\tVECTOR\t\tList\t\tSet" << endl;
         reading(vec1, list1, set1, file,arr[0]);
         sorting(vec1, list1,arr[0]);
         inserting(vec1, list1, set1,arr[0]);
         deleting(vec1, list1, set1,arr[0]);
-    
+
+        for(int j = 0; j < 4; j++){
+            for(int k = 0; k < 3; k++){
+                if(arr[0][j][k] != -1){
+                    arr[1][j][k] += arr[0][j][k];
+                  
+                }
+            }
+        }
     }
 
     return 0;
