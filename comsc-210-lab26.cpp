@@ -233,3 +233,4 @@ void deleting(vector<string> vec1, list<string> list1, set<string> set1,int arr[
     cout << endl;
 
 }
+
