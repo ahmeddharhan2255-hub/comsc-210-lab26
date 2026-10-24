@@ -11,10 +11,10 @@
 using namespace std;
 using namespace std::chrono;
 
-void reading(vector<string>& vec1, list<string>& list1, set<string>& set1, ifstream& file,int arr[0][4][3]);
-void sorting(vector<string> vec1, list<string> list1,int arr[0][4][3]);
-void inserting(vector<string> vec1, list<string> list1, set<string> set1,int arr[0][4][3]);
-void deleting(vector<string> vec1, list<string> list1, set<string> set1,int arr[0][4][3]);
+void reading(vector<string>& vec1, list<string>& list1, set<string>& set1, ifstream& file,int arr[4][3]);
+void sorting(vector<string> vec1, list<string> list1,int arr[4][3]);
+void inserting(vector<string> vec1, list<string> list1, set<string> set1,int arr[4][3]);
+void deleting(vector<string> vec1, list<string> list1, set<string> set1,int arr[4][3]);
 
 int main() {
 
@@ -41,17 +41,17 @@ int main() {
         }
 
         cout << "\t\tVECTOR\t\tList\t\tSet" << endl;
-        reading(vec1, list1, set1, file);
-        sorting(vec1, list1);
-        inserting(vec1, list1, set1);
-        deleting(vec1, list1, set1);
+        reading(vec1, list1, set1, file,arr[0]);
+        sorting(vec1, list1,arr[0]);
+        inserting(vec1, list1, set1,arr[0]);
+        deleting(vec1, list1, set1,arr[0]);
     
     }
 
     return 0;
 }
 
-void reading(vector<string>& vec1, list<string>& list1, set<string>& set1, ifstream& file,arr[0]){
+void reading(vector<string>& vec1, list<string>& list1, set<string>& set1, ifstream& file,int arr[][4][3]){
     cout << "Reading";
     string code;
 
@@ -94,7 +94,7 @@ void reading(vector<string>& vec1, list<string>& list1, set<string>& set1, ifstr
     cout << endl;
 }
 
-void sorting(vector<string> vec1, list<string> list1,arr[0]){
+void sorting(vector<string> vec1, list<string> list1,int arr[][4][3]){
     cout << "Sorting";
     auto start1 = high_resolution_clock::now();
 
@@ -116,7 +116,7 @@ void sorting(vector<string> vec1, list<string> list1,arr[0]){
     cout << endl;
 }
 
-void inserting(vector<string> vec1, list<string> list1, set<string> set1,arr[0]){
+void inserting(vector<string> vec1, list<string> list1, set<string> set1,int arr[][4][3]){
     cout << "Inserting";
     auto start = high_resolution_clock::now();
 
@@ -147,7 +147,7 @@ void inserting(vector<string> vec1, list<string> list1, set<string> set1,arr[0])
     cout << endl;
 }
 
-void deleting(vector<string> vec1, list<string> list1, set<string> set1,arr[0]){
+void deleting(vector<string> vec1, list<string> list1, set<string> set1,int arr[][4][3]){
     cout <<"Deleting";
     auto it = list1.begin();
     advance(it,list1.size()/2);
