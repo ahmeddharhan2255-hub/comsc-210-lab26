@@ -11,6 +11,7 @@
 using namespace std;
 using namespace std::chrono;
 
+//Function prototypes
 void reading(vector<string>& vec1, list<string>& list1, set<string>& set1, ifstream& file,int arr[4][3]);
 void sorting(vector<string> vec1, list<string> list1,int arr[4][3]);
 void inserting(vector<string> vec1, list<string> list1, set<string> set1,int arr[4][3]);
@@ -19,6 +20,8 @@ void deleting(vector<string> vec1, list<string> list1, set<string> set1,int arr[
 int main() {
 
     int SIZE = 15;
+    int COLS = 3;
+    int ROWS = 4;
 
     //Slice 0 represents results of that run
     //Slice 1 represents accumulated results
@@ -40,13 +43,15 @@ int main() {
         return 1;
         }
 
+        //Gather data for current experiment
         reading(vec1, list1, set1, file,arr[0]);
         sorting(vec1, list1,arr[0]);
         inserting(vec1, list1, set1,arr[0]);
         deleting(vec1, list1, set1,arr[0]);
 
-        for(int j = 0; j < 4; j++){
-            for(int k = 0; k < 3; k++){
+        //Add data to cumulative
+        for(int j = 0; j < ROWS; j++){
+            for(int k = 0; k < COLS; k++){
                 if(arr[0][j][k] != -1){
                     arr[1][j][k] += arr[0][j][k];
                   
@@ -55,38 +60,40 @@ int main() {
         }
     }
 
-    for(int i = 0; i < 4; i++){
-        for(int j = 0; j <3; j++){
-            arr[1][i][j] /= 15;
+    //Finding Average
+    for(int i = 0; i < ROWS; i++){
+        for(int j = 0; j < COLS; j++){
+            arr[1][i][j] /= SIZE;
         }
     }
 
     arr[1][1][2] = -1;
 
+    //Data Output
     cout << "Number of simulations: " << SIZE << endl;
 
     cout << "Operation\tVector\t\tList\t\tSet" << endl;;
 
     cout << "Read";
-    for(int i = 0; i < 3; i++){
+    for(int i = 0; i < COLS; i++){
         cout << "\t\t" << arr[1][0][i];
     }
     cout << endl;
 
     cout << "Sort";
-    for(int i = 0; i < 3; i++){
+    for(int i = 0; i < COLS; i++){
         cout << "          " << arr[1][1][i];
     }
     cout << endl;
 
     cout << "Insert";
-    for(int i = 0; i < 3; i++){
+    for(int i = 0; i < COLS; i++){
         cout << "\t\t" << arr[1][2][i];
     }
     cout << endl;
 
     cout << "Delete";
-    for(int i = 0; i < 3; i++){
+    for(int i = 0; i < COLS; i++){
         cout << "\t\t" << arr[1][3][i];
     }
     return 0;
