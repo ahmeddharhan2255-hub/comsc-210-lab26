@@ -67,8 +67,6 @@ int main() {
         }
     }
 
-    arr[1][1][2] = -1;
-
     //Data Output
     cout << "Number of simulations: " << SIZE << endl;
 
